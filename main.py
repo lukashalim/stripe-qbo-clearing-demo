@@ -52,7 +52,7 @@ def assert_env() -> None:
 
 
 def main() -> None:
-    print("Stripe → QBO clearing pipeline (After)\n")
+    print("Stripe -> QBO clearing pipeline (After)\n")
     assert_env()
 
     print("--- Step 1: Ingest ---")

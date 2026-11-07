@@ -57,7 +57,7 @@ def _balance_txn_for_charge(charge_id: str) -> stripe.BalanceTransaction | None:
 def main() -> None:
     stripe.api_key = _require_stripe_key()
 
-    print("=== Stripe seed (Before) — test charges with fees ===\n")
+    print("=== Stripe seed (Before) - test charges with fees ===\n")
 
     created: list[dict] = []
     for i, amount in enumerate(CHARGE_AMOUNTS_CENTS):

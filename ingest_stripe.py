@@ -26,11 +26,11 @@ def _configure_stripe() -> None:
 
 def _serialize_balance_transaction(txn: stripe.BalanceTransaction) -> dict[str, Any]:
     """Flatten a BalanceTransaction into JSON-friendly primitives."""
-    payout = txn.payout
+    payout = getattr(txn, "payout", None)
     if payout is not None and not isinstance(payout, str):
         payout = getattr(payout, "id", None)
 
-    source = txn.source
+    source = getattr(txn, "source", None)
     if source is not None and not isinstance(source, str):
         source = getattr(source, "id", None)
 
@@ -75,7 +75,7 @@ def ingest(output_path: str = RAW_CACHE_PATH) -> list[dict[str, Any]]:
     with open(output_path, "w", encoding="utf-8") as fh:
         json.dump(rows, fh, indent=2)
 
-    print(f"Ingested {len(rows)} balance transactions → {output_path}")
+    print(f"Ingested {len(rows)} balance transactions -> {output_path}")
     return rows
 
 

@@ -1,0 +1,4 @@
+.env
+raw_stripe_transactions.json
+__pycache__/
+.venv/

@@ -16,10 +16,10 @@ INTUIT_TOKEN_URL = "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer"
 QBO_SANDBOX_BASE = "https://sandbox-quickbooks.api.intuit.com"
 
 ACCOUNT_ENV_BY_BUCKET = {
-    "checking": "QBO_CHECKING_ACCOUNT_ID",
-    "fees": "QBO_FEES_ACCOUNT_ID",
-    "clearing": "QBO_CLEARING_ACCOUNT_ID",
-    "sales": "QBO_SALES_ACCOUNT_ID",
+    "checking": "CHECKING_ACCOUNT_ID",
+    "fees": "MERCHANT_FEES_ACCOUNT_ID",
+    "clearing": "STRIPE_CLEARING_ACCOUNT_ID",
+    "sales": "SALES_REVENUE_ACCOUNT_ID",
 }
 
 REQUIRED_ENV = [
